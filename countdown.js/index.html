@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>countdown starts</title>
+    <script>
+      function getRandomcolor() {
+        let a = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
+        let c = Math.floor(Math.random() * 256);
+        return `rgb(${a},${b},${c})`;
+      }
+      
+      const enddate = "14 MARCH 2026 01:50:45 PM";  // Declare this once, outside
+      const end = new Date(enddate);
+
+    // Countdown update every second
+    function updateCountdown() {
+        const today = new Date();
+        const distance = end - today;
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24)); // Days
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); // Hours
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)); // Minutes
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000); // Seconds
+
+        // Update the elements with countdown values
+        document.getElementsByClassName("box1")[0].innerHTML = `${days} days`;
+        document.getElementsByClassName("box2")[0].innerHTML = `${hours} hrs`;
+        document.getElementsByClassName("box3")[0].innerHTML = `${minutes} min`;
+        document.getElementsByClassName("box4")[0].innerHTML = `${seconds} sec`;
+        let random=getRandomcolor();
+        document.getElementsByClassName("box1")[0].style.backgroundColor = random
+        let random1=getRandomcolor();
+        document.getElementsByClassName("box2")[0].style.backgroundColor = random1
+        let random2=getRandomcolor();
+        document.getElementsByClassName("box3")[0].style.backgroundColor = random2
+        let random3=getRandomcolor();
+        document.getElementsByClassName("box4")[0].style.backgroundColor = random3
+    }
+        document.addEventListener("DOMContentLoaded",function(){
+         document.getElementById("koo").innerHTML=enddate;
+         setInterval(updateCountdown,1000);
+         // document.addEventListener("DOMContentLoaded", function () {
+          //     document.getElementById("koo").innerHTML = enddate;
+          setInterval(function() {
+            
+            let randomm=getRandomcolor();
+            document.getElementsByClassName("title")[0].style.backgroundColor=randomm;
+          }, 500);
+          
+          //     // Update countdown every second
+          //     setInterval(updateCountdown, 1000);
+          
+          // Change background color every 5 seconds
+          setInterval(function () {
+            let random = getRandomcolor();
+            document.getElementById("koo").style.backgroundColor = random;
+          }, 500);
+          
+        })
+    </script>
+    <style>
+      .holi {
+    /* width: fit-content; */
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .holi {
+    display: inline-block;
+    animation: marquee 2s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {background-color: aqua;  transform: translate(100%, 0); }
+    50%{padding: 50px; background-color: crimson; }
+    100% { background-color:blue;  transform: translate(-100%, 0); }
+  }
+ 
+ 
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+  .img{
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0px 0px;
+    margin: 0px;
+    position: fixed;
+    /* filter: brightness(0.5); */
+    filter: contrast(1.25);
+    /* filter: opacity(0.9); */
+    background-position: top;
+    z-index: -1;
+  }
+  .box{
+  width: 150px;
+  height: 150px;
+  border: 2px solid black;
+  color: black;
+  background-color:  white;
+  
+  border-radius: 10px;
+  font-size: xxx-large;
+  /* text-align: center; */
+  /* text-align: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  
+}
+.boxes{
+    
+    display: flex;
+    gap: 140px;
+    align-items: center;
+    justify-content: center;
+  padding: 150px 50px;
+  }
+  
+.title{
+    font-size: xxx-large;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+.titlee{
+    font-size: xxx-large;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    /* padding: 50px; */
+}
+  
+    </style>
+</head>
+<body>
+
+    <div class="img" style="background-image: url('https://img.freepik.com/premium-photo/wide-angle-shot-single-tree-growing-clouded-sky-sunset-surrounded-by-grass_181624-22807.jpg'); height:100vh; width: 100%;"></div>
+    <div class="title">WE ARE COMING SOON</div>
+    <div class="titlee" id="koo">14 MARCH 2025 01:50:45 PM</div>
+    <marquee behavior="" direction="right"> <div  class="holi titlee">HAPPY HOLI!!!!!!</div></marquee>
+   
+     <div class="boxes">
+        <div class="box1 box">0</div>
+        <div class="box2 box">0</div>
+        <div class="box3 box">0</div>
+        <div class="box4 box">0</div>
+     </div>
+</body>
+</html>
